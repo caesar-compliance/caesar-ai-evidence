@@ -14,8 +14,12 @@ This is a living registry of all files currently tracked in the `caesar-ai-evide
 | 🚦 **`ROADMAP.md`** | Project Roadmap | Lists six development phases transitioning the evidence engine from planning stages through stable public release. |
 | 📝 **`CHANGELOG.md`** | Historical Log | Contains a semver-compliant, chronological history of all updates and releases. |
 | 🗃️ **`REPO_INVENTORY.md`** | Workspace Registry | This file; provides a continuous, machine-readable index mapping files to functional roles. |
+| 🚦 **`PROJECT_STATE.md`** | Project State | Tracks active developmental phase, metadata, boundaries, active tasks, and milestones. |
+| 🤖 **`NEXT_ACTIONS.md`** | Next Actions | Prioritizes upcoming tasks and establishes boundaries for autonomous agent executions. |
 | 🔬 **`docs/RESEARCH_CONTEXT.md`** | Domain Research | Ingests foundational strategic requirements, user personas, and target scopes compiled from the ecosystem import packs. |
+| ⚖️ **`docs/DECISION_LOG.md`** | Decision Log | Records chronological technical, strategic, and governance decisions. |
 | 📊 **`docs/SCHEMA_OVERVIEW.md`** | Schema Overview | Technical manual mapping out the ten JSON schema structures and relational dependencies. |
+| ⚙️ **`work-items/.gitkeep`** | Work Sandbox | Directory placeholder preserving workspace sandboxes for active task executions. |
 | 📐 **`schemas/ai-system.schema.json`** | AI System Schema | JSON Schema defining governance classification, ownership, and metadata structures for AI systems. |
 | 📐 **`schemas/vendor.schema.json`** | Vendor Schema | JSON Schema defining third-party supplier profiles, data access policies, and security certifications. |
 | 📐 **`schemas/risk.schema.json`** | Risk Schema | JSON Schema defining identified operational threat levels, severity/likelihood indexes, and mitigation links. |
