@@ -14,7 +14,7 @@ This document provides a technical overview of the ten draft JSON Schemas implem
 | **`control.schema.json`** | **Defensive Control** | Details administrative policies or technical guardrails implemented to mitigate risks. |
 | **`evidence-item.schema.json`** | **Evidence Proof** | Captures concrete telemetry, static codebase scan results, manual audit checklist logs, or test cases. |
 | **`evidence-pack.schema.json`** | **Evidence Pack** | Serves as the master aggregated portfolio, binding systems, risks, controls, evidence, and event trails together. |
-| **`agent-run.schema.json`** | **Agent Runtime Log** | Logs telemetry traces, tool invocations, logic decisions, and token expenses of autonomous agent cycles. |
+| **`agent-run.schema.json`** | **Agent Runtime Log** | Logs tool calls, approvals, blocked actions, execution metadata, and token expenses of autonomous agent cycles. |
 | **`vendor-change.schema.json`** | **Supplier Shift Log** | Tracks changes in vendor privacy agreements, API deprecations, or security postures. |
 | **`regulation-change.schema.json`** | **Policy Shift Log** | Notes modifications or enforcement updates in upstream guidelines (e.g. EU AI Act clauses). |
 | **`incident-mapping.schema.json`** | **Failure Mode Log** | Documents active system incidents or vulnerabilities mapped directly to failed control IDs. |

@@ -22,7 +22,7 @@ This is a living registry of all files currently tracked in the `caesar-ai-evide
 | 📐 **`schemas/control.schema.json`** | Control Schema | JSON Schema defining operational or technical defensive measures mapped to mitigate risks. |
 | 📐 **`schemas/evidence-item.schema.json`** | Evidence Item Schema | JSON Schema defining concrete telemetry proofs, scanning outputs, or manual checklists validating controls. |
 | 📐 **`schemas/evidence-pack.schema.json`** | Evidence Pack Schema | JSON Schema for the master portfolio aggregating all systems, risks, controls, evidence, and events. |
-| 📐 **`schemas/agent-run.schema.json`** | Agent Run Schema | JSON Schema logging autonomous agent runtime executions, tool calls, and logic decisions. |
+| 📐 **`schemas/agent-run.schema.json`** | Agent Run Schema | JSON Schema logging autonomous agent runtime executions, tool calls, and approvals. |
 | 📐 **`schemas/vendor-change.schema.json`** | Vendor Change Schema | JSON Schema tracking changes in vendor privacy frameworks, API endpoints, or safety profiles. |
 | 📐 **`schemas/regulation-change.schema.json`** | Regulation Change Schema | JSON Schema tracking upstream policy updates, new compliance guidelines, or clauses. |
 | 📐 **`schemas/incident-mapping.schema.json`** | Incident Mapping Schema | JSON Schema mapping operational failures or threat vulnerabilities to failing control references. |

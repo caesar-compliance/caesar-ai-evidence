@@ -134,7 +134,7 @@ Every schema will adhere strictly to JSON Schema Draft 2020-12 and will be store
 | **`control`** | `control.schema.json` | Control ID, title, description, category (technical, administrative, physical). |
 | **`evidence-item`** | `evidence-item.schema.json` | Evidence ID, timestamp, tool name, proof type, raw payload hash, source path. |
 | **`evidence-pack`** | `evidence-pack.schema.json` | Pack ID, target system, compiled evidence item list, cryptographic signatures, schema references. |
-| **`agent-run`** | `agent-run.schema.json` | Run ID, agent name, task goal, tool calls registry, system decisions, token count. |
+| **`agent-run`** | `agent-run.schema.json` | Run ID, agent name, task goal, tool calls registry, approvals, token count. |
 | **`vendor-change`** | `vendor-change.schema.json` | Event ID, target vendor, update timestamp, change details, risk delta. |
 | **`regulation-change`** | `regulation-change.schema.json` | Change ID, regulator, text updated, target clauses, compliance gap analysis. |
 | **`incident-mapping`** | `incident-mapping.schema.json` | Mapping ID, actual failure mode, target systems affected, mitigation controls triggered. |

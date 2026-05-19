@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/agent-run.schema.json",
   "title": "Agent Run Record",
-  "description": "Defines the execution telemetry, decision points, and tool-call actions of an autonomous agent run for runtime auditing.",
+  "description": "Defines the execution telemetry, approvals, blocked actions, and tool-call actions of an autonomous agent run for runtime auditing.",
   "type": "object",
   "required": [
     "id",
@@ -30,13 +30,13 @@
         "type": "object",
         "properties": {
           "timestamp": { "type": "string", "format": "date-time" },
-          "decision_type": { "type": "string" },
-          "justification": { "type": "string" }
+          "decision_type": { "type": "string", "description": "Classification of the event, approval, or blocked action." },
+          "justification": { "type": "string", "description": "Operator notes, event context, or justification description." }
         },
         "required": ["timestamp", "decision_type", "justification"],
         "additionalProperties": true
       },
-      "description": "Key logical decisions and justifications recorded during execution."
+      "description": "Timeline of operational events, approvals, blocked actions, and operator notes recorded during execution."
     },
     "tool_calls": {
       "type": "array",
@@ -64,7 +64,7 @@
         "success",
         "failed"
       ],
-      "description": "Logical exit status of the agent task."
+      "description": "Operational exit status of the agent task."
     },
     "created_at": {
       "type": "string",

@@ -78,7 +78,7 @@ caesar-ai-evidence/
 
 ## 🔄 Core Data Ingestion & Validation Pipeline
 
-The future `caesar-evidence` execution pipeline guarantees data integrity via a structured three-tier process:
+The future `caesar-evidence` execution pipeline is designed to support data integrity verification via a structured three-tier process:
 
 ```
   ┌─────────────────┐       ┌──────────────────────┐       ┌─────────────────┐

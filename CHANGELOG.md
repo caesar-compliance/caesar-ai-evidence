@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.2.0] - 2026-05-19
+## [0.2.1] - 19 May 2026
+
+### Changed
+- **Schema Wording & Refinements:** Cleaned schema wording and documentation before v0.3 examples, replacing absolute guarantees and sentient agent wording with operational event timelines, tool calls, and approvals.
+
+## [0.2.0] - 19 May 2026
 
 ### Added
 - **v0.2 Draft JSON Schemas:** Added ten core draft schemas conforming to JSON Schema Draft 2020-12 in `/schemas/`:
@@ -24,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Schema Overview Documentation:** Added [docs/SCHEMA_OVERVIEW.md](docs/SCHEMA_OVERVIEW.md) mapping core entities, relational reference layouts, and planned utility bindings.
 - **Architectural Updates:** Integrated v0.2 active status definitions in [README.md](README.md), [ARCHITECTURE.md](ARCHITECTURE.md), and [ROADMAP.md](ROADMAP.md).
 
-## [0.1.0] - 2026-05-19
+## [0.1.0] - 19 May 2026
 
 ### Added
 - **Ecosystem Core Foundation:** Initialized the `caesar-ai-evidence` repository structure and established key architectural planning documents.
