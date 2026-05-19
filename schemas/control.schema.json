@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/control.schema.json",
+  "title": "Control Record",
+  "description": "Defines a governance control, technical guardrail, or operational process designed to mitigate AI risks.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "category",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the control (e.g. ctl_1234)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short title or name of the governance control (e.g. data_anonymization, bias_monitoring)."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of how the control operates and is verified."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "technical",
+        "administrative",
+        "physical"
+      ],
+      "description": "The nature of the defensive control."
+    },
+    "mitigated_risk_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of risk identifiers this control directly maps to and mitigates (references rsk_1234)."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "implemented",
+        "operational",
+        "deprecated"
+      ],
+      "description": "Current lifecycle status of the control."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the control record was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the control record was last updated."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

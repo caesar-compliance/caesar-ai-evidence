@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/risk.schema.json",
+  "title": "Risk Record",
+  "description": "Defines an identified AI system risk, threat level evaluation, and mitigation status mapping.",
+  "type": "object",
+  "required": [
+    "id",
+    "ai_system_id",
+    "title",
+    "severity",
+    "likelihood",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the risk (e.g. rsk_1234)."
+    },
+    "ai_system_id": {
+      "type": "string",
+      "description": "Identifier of the AI system affected (references sys_1234)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short title or name of the risk (e.g. model_bias, prompt_leakage)."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the risk scenario, potential impact, and context."
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of risk (e.g. bias, privacy, security, transparency, safety)."
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "description": "Potential impact scale if the risk scenario materializes."
+    },
+    "likelihood": {
+      "type": "string",
+      "enum": [
+        "rare",
+        "possible",
+        "frequent",
+        "almost_certain"
+      ],
+      "description": "Estimated operational probability of the risk scenario occurring."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "identified",
+        "assessed",
+        "mitigated",
+        "accepted"
+      ],
+      "description": "Current lifecycle status of the risk register."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the risk record was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the risk record was last modified."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

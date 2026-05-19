@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/regulation-change.schema.json",
+  "title": "Regulation Change Record",
+  "description": "Defines an audit log entry tracking updates or amendments in regulatory policies, acts, or security frameworks.",
+  "type": "object",
+  "required": [
+    "id",
+    "regulator",
+    "regulation_name",
+    "change_type",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the policy update (e.g. reg_1234)."
+    },
+    "regulator": {
+      "type": "string",
+      "description": "The administrative body responsible for the update (e.g. European Union, NIST)."
+    },
+    "regulation_name": {
+      "type": "string",
+      "description": "Official name of the policy framework (e.g. EU AI Act, NIST AI RMF)."
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "new_clause",
+        "amendment",
+        "guideline_release",
+        "enforcement_action"
+      ],
+      "description": "Classification of the regulatory update."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the policy changes and operational requirements."
+    },
+    "affected_control_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of system controls that may need revision as a result of this policy update (references ctl_1234)."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the change was officially registered."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

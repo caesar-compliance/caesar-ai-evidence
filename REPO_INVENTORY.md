@@ -15,6 +15,17 @@ This is a living registry of all files currently tracked in the `caesar-ai-evide
 | 📝 **`CHANGELOG.md`** | Historical Log | Contains a semver-compliant, chronological history of all updates and releases. |
 | 🗃️ **`REPO_INVENTORY.md`** | Workspace Registry | This file; provides a continuous, machine-readable index mapping files to functional roles. |
 | 🔬 **`docs/RESEARCH_CONTEXT.md`** | Domain Research | Ingests foundational strategic requirements, user personas, and target scopes compiled from the ecosystem import packs. |
+| 📊 **`docs/SCHEMA_OVERVIEW.md`** | Schema Overview | Technical manual mapping out the ten JSON schema structures and relational dependencies. |
+| 📐 **`schemas/ai-system.schema.json`** | AI System Schema | JSON Schema defining governance classification, ownership, and metadata structures for AI systems. |
+| 📐 **`schemas/vendor.schema.json`** | Vendor Schema | JSON Schema defining third-party supplier profiles, data access policies, and security certifications. |
+| 📐 **`schemas/risk.schema.json`** | Risk Schema | JSON Schema defining identified operational threat levels, severity/likelihood indexes, and mitigation links. |
+| 📐 **`schemas/control.schema.json`** | Control Schema | JSON Schema defining operational or technical defensive measures mapped to mitigate risks. |
+| 📐 **`schemas/evidence-item.schema.json`** | Evidence Item Schema | JSON Schema defining concrete telemetry proofs, scanning outputs, or manual checklists validating controls. |
+| 📐 **`schemas/evidence-pack.schema.json`** | Evidence Pack Schema | JSON Schema for the master portfolio aggregating all systems, risks, controls, evidence, and events. |
+| 📐 **`schemas/agent-run.schema.json`** | Agent Run Schema | JSON Schema logging autonomous agent runtime executions, tool calls, and logic decisions. |
+| 📐 **`schemas/vendor-change.schema.json`** | Vendor Change Schema | JSON Schema tracking changes in vendor privacy frameworks, API endpoints, or safety profiles. |
+| 📐 **`schemas/regulation-change.schema.json`** | Regulation Change Schema | JSON Schema tracking upstream policy updates, new compliance guidelines, or clauses. |
+| 📐 **`schemas/incident-mapping.schema.json`** | Incident Mapping Schema | JSON Schema mapping operational failures or threat vulnerabilities to failing control references. |
 
 ---
 

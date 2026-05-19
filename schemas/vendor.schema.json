@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/vendor.schema.json",
+  "title": "Vendor Record",
+  "description": "Defines third-party AI supplier credentials, data policies, and active service integrations under supplier reviews.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the vendor (e.g. vnd_1234)."
+    },
+    "name": {
+      "type": "string",
+      "description": "Legal or operational name of the supplier."
+    },
+    "description": {
+      "type": "string",
+      "description": "Overview of services or tool APIs provided by this supplier."
+    },
+    "contact_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Primary email for compliance or support inquiries."
+    },
+    "data_access_policy": {
+      "type": "object",
+      "properties": {
+        "storage_location": { "type": "string", "description": "e.g. EU, US-East." },
+        "transit_protection": { "type": "boolean", "description": "Whether in-transit data is encrypted." },
+        "processing_purpose": { "type": "string", "description": "Operational scope of data usage." }
+      },
+      "required": ["storage_location"],
+      "additionalProperties": true,
+      "description": "Data privacy and retention rules of the supplier."
+    },
+    "certifications": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of active security or audit certifications (e.g. ISO/IEC 27001, SOC 2 Type II)."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "evaluation",
+        "approved",
+        "suspended",
+        "terminated"
+      ],
+      "description": "Operational approval status of the supplier."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the vendor record was initialized."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the vendor record was last modified."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

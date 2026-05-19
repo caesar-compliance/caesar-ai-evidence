@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/evidence-item.schema.json",
+  "title": "Evidence Item",
+  "description": "Defines a concrete piece of operational telemetry, codebase scan log, or audit trace validating a control's operation.",
+  "type": "object",
+  "required": [
+    "id",
+    "control_ids",
+    "generator",
+    "type",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the evidence item (e.g. evi_1234)."
+    },
+    "control_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of control identifiers this evidence item directly validates (references ctl_1234)."
+    },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the tool that emitted the evidence (e.g. caesar-ai-scan)." },
+        "version": { "type": "string", "description": "Semantic version of the emitting tool." }
+      },
+      "required": ["name", "version"],
+      "additionalProperties": true,
+      "description": "Originating ecosystem tool context."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "static_scan",
+        "dynamic_test",
+        "agent_ledger",
+        "vendor_watch",
+        "manual_audit"
+      ],
+      "description": "Classification or methodology of the generated proof."
+    },
+    "payload_summary": {
+      "type": "string",
+      "description": "Short, human-readable summary of the test or scan outcomes."
+    },
+    "payload_details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Raw, structured logs or JSON payload emitted by the generator."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this evidence was generated."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

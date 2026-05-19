@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/incident-mapping.schema.json",
+  "title": "Incident Mapping Record",
+  "description": "Defines an audit log entry mapping actual AI operational failures or vulnerabilities directly to targeted defensive controls.",
+  "type": "object",
+  "required": [
+    "id",
+    "incident_id",
+    "ai_system_id",
+    "failed_control_ids",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the incident mapping entry (e.g. map_1234)."
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Reference identifier of the incident case file (e.g. inc_1234)."
+    },
+    "ai_system_id": {
+      "type": "string",
+      "description": "Identifier of the AI system affected (references sys_1234)."
+    },
+    "failed_control_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of system controls that failed or were bypassed during the event (references ctl_1234)."
+    },
+    "impact_summary": {
+      "type": "string",
+      "description": "Brief description of system damage, data exposure, or biased outputs."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the incident event mapping was recorded."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

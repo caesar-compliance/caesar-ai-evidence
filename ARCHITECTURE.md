@@ -30,9 +30,9 @@
 
 ---
 
-## 📂 Proposed Codebase Structure
+## 📂 Codebase Directory Layout
 
-To maintain clean separation between schemas, implementation logic, testing examples, and reporting assets, the codebase will adhere to the following directory layout:
+To maintain clean separation between schemas, implementation logic, testing examples, and reporting assets, the codebase adheres to the following directory layout. The ten draft JSON Schemas are now fully implemented under the `schemas/` directory in this v0.2 release:
 
 ```
 caesar-ai-evidence/

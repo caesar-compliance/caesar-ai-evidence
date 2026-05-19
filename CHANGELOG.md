@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.0] - 2026-05-19
+
+### Added
+- **v0.2 Draft JSON Schemas:** Added ten core draft schemas conforming to JSON Schema Draft 2020-12 in `/schemas/`:
+  - `ai-system.schema.json` (AI System Record)
+  - `vendor.schema.json` (Vendor Record)
+  - `risk.schema.json` (Risk Record)
+  - `control.schema.json` (Control Record)
+  - `evidence-item.schema.json` (Evidence Item)
+  - `evidence-pack.schema.json` (Evidence Pack aggregator)
+  - `agent-run.schema.json` (Agent Run Record)
+  - `vendor-change.schema.json` (Vendor Change Record)
+  - `regulation-change.schema.json` (Regulation Change Record)
+  - `incident-mapping.schema.json` (Incident Mapping Record)
+- **Schema Overview Documentation:** Added [docs/SCHEMA_OVERVIEW.md](docs/SCHEMA_OVERVIEW.md) mapping core entities, relational reference layouts, and planned utility bindings.
+- **Architectural Updates:** Integrated v0.2 active status definitions in [README.md](README.md), [ARCHITECTURE.md](ARCHITECTURE.md), and [ROADMAP.md](ROADMAP.md).
+
 ## [0.1.0] - 2026-05-19
 
 ### Added

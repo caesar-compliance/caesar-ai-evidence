@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/vendor-change.schema.json",
+  "title": "Vendor Change Record",
+  "description": "Defines an audit log entry tracking changes in vendor postures, supplier privacy policy updates, or service APIs.",
+  "type": "object",
+  "required": [
+    "id",
+    "vendor_id",
+    "change_type",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the change event (e.g. vch_1234)."
+    },
+    "vendor_id": {
+      "type": "string",
+      "description": "Identifier of the associated vendor (references vnd_1234)."
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "privacy_policy_update",
+        "api_deprecation",
+        "ownership_shift",
+        "certification_status"
+      ],
+      "description": "Classification of the identified supplier change."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the change and its implications."
+    },
+    "risk_delta": {
+      "type": "object",
+      "properties": {
+        "severity_increase": { "type": "boolean" },
+        "evaluation_notes": { "type": "string" }
+      },
+      "required": ["severity_increase"],
+      "additionalProperties": true,
+      "description": "Assessment of risk impact resulting from this supplier shift."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the change was detected."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

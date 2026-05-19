@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/agent-run.schema.json",
+  "title": "Agent Run Record",
+  "description": "Defines the execution telemetry, decision points, and tool-call actions of an autonomous agent run for runtime auditing.",
+  "type": "object",
+  "required": [
+    "id",
+    "agent_name",
+    "task_goal",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the agent run (e.g. run_1234)."
+    },
+    "agent_name": {
+      "type": "string",
+      "description": "Name or classification identifier of the autonomous agent."
+    },
+    "task_goal": {
+      "type": "string",
+      "description": "Primary goal or objective assigned to the agent."
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "decision_type": { "type": "string" },
+          "justification": { "type": "string" }
+        },
+        "required": ["timestamp", "decision_type", "justification"],
+        "additionalProperties": true
+      },
+      "description": "Key logical decisions and justifications recorded during execution."
+    },
+    "tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tool_name": { "type": "string" },
+          "parameters": { "type": "object", "additionalProperties": true },
+          "result_status": { "type": "string", "enum": ["success", "error"] }
+        },
+        "required": ["tool_name", "result_status"],
+        "additionalProperties": true
+      },
+      "description": "List of system or external tool call actions executed by the agent."
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total model tokens consumed during this operational run."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "running",
+        "success",
+        "failed"
+      ],
+      "description": "Logical exit status of the agent task."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the agent run was initialized."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

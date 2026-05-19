@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/evidence-pack.schema.json",
+  "title": "Evidence Pack",
+  "description": "Aggregated portfolio compiling AI systems, vendors, risks, controls, evidence items, and operational events into a single verifiable compliance package.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the compiled evidence pack (e.g. pck_1234)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Descriptive title of the evidence pack (e.g. System Q1 2026 Audit Pack)."
+    },
+    "description": {
+      "type": "string",
+      "description": "Summary context or audit goal of this compilation."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this evidence pack was compiled."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this evidence pack was last modified."
+    },
+    "ai_systems": {
+      "type": "array",
+      "items": {
+        "$ref": "ai-system.schema.json"
+      },
+      "description": "AI systems compiled within this pack."
+    },
+    "vendors": {
+      "type": "array",
+      "items": {
+        "$ref": "vendor.schema.json"
+      },
+      "description": "Associated third-party AI suppliers."
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "$ref": "risk.schema.json"
+      },
+      "description": "Risk register entries compiled for the target systems."
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "$ref": "control.schema.json"
+      },
+      "description": "Active operational and technical controls mapped in the pack."
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence-item.schema.json"
+      },
+      "description": "Scan logs, test cases, and telemetry validating the active controls."
+    },
+    "agent_runs": {
+      "type": "array",
+      "items": {
+        "$ref": "agent-run.schema.json"
+      },
+      "description": "Telemetry logs recording autonomous agent actions."
+    },
+    "vendor_changes": {
+      "type": "array",
+      "items": {
+        "$ref": "vendor-change.schema.json"
+      },
+      "description": "Audit trail log mapping vendor privacy or API changes."
+    },
+    "regulation_changes": {
+      "type": "array",
+      "items": {
+        "$ref": "regulation-change.schema.json"
+      },
+      "description": "Upstream regulatory framework updates recorded in the pack."
+    },
+    "incident_mappings": {
+      "type": "array",
+      "items": {
+        "$ref": "incident-mapping.schema.json"
+      },
+      "description": "Operational failure files mapped to mitigation controls."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

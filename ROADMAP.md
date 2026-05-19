@@ -7,20 +7,20 @@
 The development of **`caesar-ai-evidence`** is split into six strategic phases to ensure that the core data schemas are robust, validated, and thoroughly tested before releasing the final stable evidence framework version.
 
 ```
-  v0.1              v0.2             v0.3             v0.4             v0.5             v1.0
+      v0.1              v0.2             v0.3             v0.4             v0.5             v1.0
 ┌───────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
 │ Documentation │ │ JSON Schema  │ │ Example      │ │ CLI Validate │ │ Markdown/HTML│ │ Stable       │
 │ & Model Plan  │ │ Draft        │ │ Packs        │ │ Prototype    │ │ Report Gen   │ │ Release      │
 └───────┬───────┘ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘
         ▼                ▼                ▼                ▼                ▼                ▼
-     Active          Planned          Planned          Planned          Planned          Planned
+    Completed        Completed         Active          Planned          Planned          Planned
 ```
 
 ---
 
 ## 🗺️ Phased Milestones
 
-### 🟢 Phase v0.1 — Documentation & Evidence Model Planning (Active)
+### 🟢 Phase v0.1 — Documentation & Evidence Model Planning (Completed)
 * **Goal:** Initialize repository guidelines, core specs, and architectural structures to map out relational schema models.
 * **Deliverables:**
   * [x] Ecosystem integration mapping (`docs/RESEARCH_CONTEXT.md`).
@@ -31,17 +31,18 @@ The development of **`caesar-ai-evidence`** is split into six strategic phases t
 
 ---
 
-### 🟡 Phase v0.2 — JSON Schema Draft (Planned)
+### 🟢 Phase v0.2 — JSON Schema Draft (Completed)
 * **Goal:** Draft the core ten JSON Schema files under `/schemas/` conforming to JSON Schema Draft 2020-12 rules.
 * **Deliverables:**
-  * [ ] Draft initial `ai-system.schema.json` and `vendor.schema.json`.
-  * [ ] Construct threat-model maps in `risk.schema.json` and `control.schema.json`.
-  * [ ] Draft execution telemetry models for `evidence-item.schema.json` and `evidence-pack.schema.json`.
-  * [ ] Define automated scraper schemas in `vendor-change.schema.json`, `regulation-change.schema.json`, `agent-run.schema.json`, and `incident-mapping.schema.json`.
+  * [x] Draft initial `ai-system.schema.json` and `vendor.schema.json`.
+  * [x] Construct threat-model maps in `risk.schema.json` and `control.schema.json`.
+  * [x] Draft execution telemetry models for `evidence-item.schema.json` and `evidence-pack.schema.json`.
+  * [x] Define automated scraper schemas in `vendor-change.schema.json`, `regulation-change.schema.json`, `agent-run.schema.json`, and `incident-mapping.schema.json`.
+* **Completion Date:** 19 May 2026
 
 ---
 
-### 🟡 Phase v0.3 — Example Evidence Packs (Planned)
+### 🟢 Phase v0.3 — Example Evidence Packs (Active)
 * **Goal:** Construct fully populated example payloads in `/examples/` to verify that the draft schemas can successfully capture real-world ML engineering and vendor metadata.
 * **Deliverables:**
   * [ ] Simple AI System registry payload with mapped risks and technical controls.

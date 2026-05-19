@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/caesar-compliance/caesar-ai-evidence/main/schemas/ai-system.schema.json",
+  "title": "AI System Record",
+  "description": "Defines the metadata, classification, ownership, and deployment state of an AI system under governance.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "owner",
+    "classification_tier",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the AI system (e.g. sys_1234)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Name or title of the AI system."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the AI system's purpose and functionality."
+    },
+    "owner": {
+      "type": "string",
+      "description": "Department, team, or individual responsible for the system."
+    },
+    "classification_tier": {
+      "type": "string",
+      "enum": [
+        "unclassified",
+        "low",
+        "medium",
+        "high",
+        "unacceptable_risk"
+      ],
+      "description": "Criticality or risk tier of the AI system under operational policy."
+    },
+    "model_details": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "type": { "type": "string", "description": "e.g. LLM, computer vision, regression." },
+        "framework": { "type": "string", "description": "e.g. PyTorch, TensorFlow, HuggingFace." }
+      },
+      "required": ["name", "version"],
+      "additionalProperties": true,
+      "description": "Technical specs of the primary model backing the system."
+    },
+    "datasets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of primary training, validation, or inference dataset references."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_development",
+        "in_testing",
+        "active",
+        "retired"
+      ],
+      "description": "Current lifecycle status of the AI system."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the record was initialized."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the record was last modified."
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Custom key-value pairs for metadata extensions."
+    }
+  },
+  "additionalProperties": false
+}

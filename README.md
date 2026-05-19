@@ -56,6 +56,13 @@ By establishing a unified evidence format, this library supports the ingestion a
 └────────────────┘ └───────────────┘ └──────────────────┘
 ```
 
+## 📐 Current Schema Draft (v0.2)
+
+This repository includes the initial draft JSON Schemas conforming to JSON Schema Draft 2020-12:
+
+*   **[schemas/](schemas/)** — Directory containing the 10 core JSON Schema files.
+*   **[docs/SCHEMA_OVERVIEW.md](docs/SCHEMA_OVERVIEW.md)** — Architectural reference and connectivity map explaining each schema and relational dependencies.
+
 ---
 
 ## ⚖️ Important Disclaimer
@@ -72,4 +79,5 @@ By establishing a unified evidence format, this library supports the ingestion a
 * **[ROADMAP.md](ROADMAP.md)** — Project development roadmap and backlogs.
 * **[CHANGELOG.md](CHANGELOG.md)** — Chronological release history.
 * **[REPO_INVENTORY.md](REPO_INVENTORY.md)** — Structural file index of this codebase.
+* **[docs/SCHEMA_OVERVIEW.md](docs/SCHEMA_OVERVIEW.md)** — Architectural reference and connectivity map explaining the v0.2 schemas.
 * **[docs/RESEARCH_CONTEXT.md](docs/RESEARCH_CONTEXT.md)** — Functional domain research and background metadata.
